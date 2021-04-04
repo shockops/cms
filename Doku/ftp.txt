@@ -1,0 +1,47 @@
+Doku für den FTP Upload Mechanismus
+
+1. ftp-upload.php - Datei
+// (0) FTP SETTINGS
+define('FTP_HOST', '127.0.0.1');                                                    //Server Adresse
+define('FTP_USER', 'Infoportal');                                                   //DB Name
+define('FTP_PASSWORD', '');                                                         //DB Password
+
+// (1) CONNECT TO FTP SERVER
+$ftp = ftp_connect(FTP_HOST) or die("Failed to connect to " . FTP_HOST);            //Versuche den FTP-Server zu erreichen und sich mit diesem zu verbinden
+
+// (2) LOGIN
+if (ftp_login($ftp, FTP_USER, FTP_PASSWORD))                                        //Wenn $ftp = true, also Verbindung zu FTP-Server erfolgreich + FTP Username + FTP Passwort, um sich gegenüber dem DB Zugriff zu verifizieren
+{
+// (3) UPLOAD
+$source = $_FILES['upload']['tmp_name']; // Source file on server                   //Quelldatei = $_FILES(Form upload Datei) -> Index von $_FILES-Array um Upload Datei Array zu bekommen + Index von Upload Datei Array um den Temp Namen zu bekommen
+echo $source;                                                                       //echo
+$destination = $_FILES['upload']['name']; // Save to this file on FTP server        //Bekomme den Namen der Datei, die hochgeladen werden soll, und nutze diesen als Dateinamen auf dem Server
+if (ftp_put($ftp, $destination, $source, FTP_BINARY))                               //Wenn Verbindung zum FTP-Server besteht, Zieldatei, Sourcedatei und Upload Methode richtig sind, dann lade hoch durch ftp_put()
+{
+echo "Uploaded to $destination";                                                    //Meldung Success
+} else {
+echo "Error uploading $source";                                                     //Meldung Failure
+}
+} else {
+echo "Invalid user/password";                                                       //Meldung falsche Anmeldedaten für FTP-Server
+}
+
+// (4) CLOSE FTP CONNECTION
+ftp_close($ftp);                                                                    //Beenden der FTP-Verbindung
+
+
+
+2. Datei mit Upload Form
+
+if(isset($_POST['headerposted']))                                                   //Wenn hidden name is true, dann
+{
+$subpath = "Upload/Assets/";                                                        //erweiternder Pfad für Upload in bestimmten Ordner
+require('ftp-upload.php');                                                          //Einbindung der FTP-Upload Datei
+}
+
+<form method="post" enctype="multipart/form-data">
+<input type="file" class="custom-file-input" id="" name="upload" accept=".png">     //$_FILES(upload -> is name)
+<label class="custom-file-label" for="">Header auswählen</label>
+<input name="headerposted" type="hidden" value="true" />
+<button type="submit" class="btn btn-outline-primary" type="button" name="uploadheaderimage">Hochladen</button>
+</form>

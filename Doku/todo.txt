@@ -1,0 +1,7 @@
+content:
+    Preview Button funkt nicht, wenn er in der Form ist?!
+DB:
+    Posts:
+        Post Type inkludieren, damit beim Link zum Post im Backend das entsprechende Template angesprochen werden kann
+
+Log Download -> Timestamp des Downloads an den Dateinamen anhängen

@@ -1,0 +1,9 @@
+Content -> Beitrag wählen -> ausgewählte Kategorie in select behalten
+		-> ADD -> Beitrag erstellen -> Beitrag erstellen Form/Aktion hinzufügen
+User	-> User ändern -> Berechtigungen Adden
+		-> Neuen User anlegen -> Berechtigungen Adden
+
+Auf später verschoben
+Home -> Neue Aktivität -> Link fixen -> NO!
+Profil -> Eigene Rechte -> Tabelle fixen -> Join -> NO!
+Settings ->	SFTP Server Einstellungen -> NO!

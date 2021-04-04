@@ -1,0 +1,60 @@
+05.10.2019
+    18:45 - 23:30 - 4.75h ->
+        Design Backend
+            Userlist as Table
+            Form for User edits
+            Form create new User
+            Create Login Page
+
+        Function Backend
+            Get all User from DB
+            Get Selected User Data in Form as Placeholder
+            Redirect after Login to home of Backend
+            Redirect after Logout to login
+            Created exec function for CRUD Ops
+            Get all Cats
+            Get all Posts from Cat
+            Add new User
+            Get selected Cat_ID from select as Var to pass to URL for further Post Selection
+
+06.10.2019
+    00:15 - 01:30 - 1.25h ->
+        Function Backend
+            Get all Posts from Cat
+            Add new User
+            Get selected Cat_ID from select as Var to pass to URL for further Post Selection
+    20:25 - 22:25 - 2h ->
+        Design Backend
+            login css path fixed
+            Form for Post edits 
+            Form for Post edit Preview
+        Function Backend
+            Get Selected Post Data in Form as Placeholder
+    22:30 - 00:00 - 1.5h ->
+        Design Backend
+            Form for Post edit Preview -> Disabled Forms and Labels
+            Header, Sidebar, Footer -> fixed all of 'em
+        Function Backend
+
+10.10.2019
+    08:30 - 10:15 - 1.75 ->
+        Design Backend
+            Homescreen Design -> Notizen, Logs, Aktivitäten
+        Function Backend
+            Login -> gescheitert, "Cannot use Type ValLogin as array"?!
+    21:15 - 22:30 - 1.25 ->
+        Design Backend 
+        Function Backend
+            Login -> Will immer noch nicht -> Pascal meldet sich nicht, ist ein A.
+            Log Download funktioniert
+
+
+Count: 12.5h
+
+
+
+
+Template:
+Starttime - Endtime - Time coded @60=100 ->
+        Design Backend
+        Function Backend
